@@ -11,7 +11,7 @@ from ignores import ignorelist
 from ignores import readfile
 
 # cat ignores >> .gitignore
-def language(languages):
+def add(languages):
 	ignores = ignorelist(languages)
 	if len(ignores)==0:
 		print "no available git ignore file"
@@ -33,7 +33,7 @@ def usage():
 	print "usage: git ignore <subcommand>"
 	print
 	print "Available subcommands are:"
-	print "    language    Add gitignore files. Try use 'git ignore language Python C'"
+	print "    add         Add gitignore files. Try use 'git ignore add Python C'"
 	print "    save        Save current .gitignore file as a template"
 	print "    usage       Show this help message and exit"
 	print "    version     Show version and exit"
@@ -50,8 +50,8 @@ def version():
 
 # subcommand router
 def select( argv ):
-	if argv[1] == "language":
-		language(argv[2:])
+	if argv[1] == "add":
+		add(argv[2:])
 		exit()
 	elif argv[1] == "save":
 		save(argv[2:])
