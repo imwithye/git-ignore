@@ -14,7 +14,7 @@ from ignores import readfile
 def language(languages):
 	ignores = ignorelist(languages)
 	if len(ignores)==0:
-		print "no available git ignore file."
+		print "no available git ignore file"
 		return
 	try:
 		gitignore = open('.gitignore', 'a')
