@@ -8,7 +8,7 @@
 
 import os, sys
 
-userpath = os.path.expanduser('~') + '/.git-ignore-templates/'
+userpath = os.path.expanduser('~') + '/.git-ignores/'
 syspath = sys.path[0] + "/system-templates/"
 githubpath = sys.path[0] + "/github-templates/"
 
@@ -17,8 +17,7 @@ def filelist():
 	try:
 		usertemplates = os.listdir(userpath)
 	except OSError:
-		os.mkdir(userpath)
-		usertemplates = os.listdir(userpath)
+		usertemplates = []
 	try:
 		systemplates = os.listdir(syspath)
 	except OSError:
