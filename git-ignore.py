@@ -7,9 +7,10 @@
 # Distributed under terms of the MIT license.
 
 import sys
+from file import ignorelist
 
 def language(languages):
-	print languages
+	ignores = ignorelist(languages)
 
 def save(filename):
 	print filename
