@@ -8,12 +8,11 @@
 
 import sys
 
-# print version
-def version():
-	print "git ignore, version 0.1."
-	print
-	print "http://github.com/imwithye/git-ignore"
-	print "git ignore, copyright Ciel <imwithye@gmail.com>"
+def language(languages):
+	print languages
+
+def save(filename):
+	print filename
 
 # print usage
 def usage():
@@ -28,12 +27,21 @@ def usage():
 	print "http://github.com/imwithye/git-ignore"
 	print "git ignore, copyright Ciel <imwithye@gmail.com>"
 
+# print version
+def version():
+	print "git ignore, version 0.1."
+	print
+	print "http://github.com/imwithye/git-ignore"
+	print "git ignore, copyright Ciel <imwithye@gmail.com>"
+
 # subcommand router
 def select( argv ):
 	if argv[1] == "language":
-		print "language"
+		language(argv[2:])
+		exit()
 	elif argv[1] == "save":
-		print "save"
+		save(argv[2:])
+		exit()
 	elif argv[1] == "help" or argv[1] == "usage":
 		usage()
 		exit()
