@@ -1,0 +1,3 @@
+[submodule "git-ignore/github-templates"]
+	path = git-ignore/github-templates
+	url = git://github.com/github/gitignore
