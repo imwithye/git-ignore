@@ -6,11 +6,11 @@
 #
 # Distributed under terms of the MIT license.
 
-import os
+import os, sys
 
 userpath = os.path.expanduser('~') + '/.git-ignore-templates/'
-syspath = os.getcwd() + "/system-templates/"
-githubpath = os.getcwd() + "/github-templates/"
+syspath = sys.path[0] + "/system-templates/"
+githubpath = sys.path[0] + "/github-templates/"
 
 # get file list in three search paths
 def filelist():
@@ -22,7 +22,7 @@ def filelist():
 	try:
 		systemplates = os.listdir(syspath)
 	except OSError:
-		os.mkdir(userpath)
+		os.mkdir(syspath)
 		systemplates = os.listdir(syspath)
 	try:
 		githubtemplates = os.listdir(githubpath)
