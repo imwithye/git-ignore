@@ -7,10 +7,18 @@
 # Distributed under terms of the MIT license.
 
 import sys
-from file import ignorelist
+from ignores import ignorelist
+from ignores import readfile
 
 def language(languages):
 	ignores = ignorelist(languages)
+	try:
+		gitignore = open('gitignore', 'a')
+		for ignore in ignores:
+			gitignore.write(readfile(ignore))
+			gitignore.write("\n\n")
+	finally:
+		gitignore.close()
 
 def save(filename):
 	print filename

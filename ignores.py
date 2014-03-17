@@ -12,7 +12,8 @@ userpath = os.path.expanduser('~') + '/.git-ignore-templates/'
 syspath = os.getcwd() + "/system-templates/"
 githubpath = os.getcwd() + "/github-templates/"
 
-def searchpath():
+# get file list in three search paths
+def filelist():
 	try:
 		usertemplates = os.listdir(userpath)
 	except OSError:
@@ -30,6 +31,7 @@ def searchpath():
 
 	return (usertemplates, systemplates, githubtemplates)
 
+# search file
 def searchfile(language, templates):
 	language = language.lower() + ".gitignore"
 	for template in templates:
@@ -37,8 +39,9 @@ def searchfile(language, templates):
 			return template
 	return ""
 
+# create ignore file path list
 def ignorelist(languages):
-	user, system, github = searchpath()
+	user, system, github = filelist()
 	ignorelist = []
 	for language in languages:
 		ignorefile = ""
@@ -58,3 +61,14 @@ def ignorelist(languages):
 			ignorelist.append(githubpath + ignorefile)
 			continue
 	return ignorelist
+
+def readfile(filepath):
+	content = ""
+	try:
+		ignorefile = open(filepath, 'r')
+		content = ignorefile.read()
+	except:
+		content = ""
+	finally:
+		ignorefile.close()
+		return content
