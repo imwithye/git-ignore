@@ -5,22 +5,11 @@
 # Distributed under terms of the MIT license.
 
 import sys
-from ignores import ignorelist
-from ignores import readfile
+from git_ignore_add import git_ignore_add
 
 # cat ignores >> .gitignore
 def add(languages):
-	ignores = ignorelist(languages)
-	if len(ignores)==0:
-		print "no available git ignore file"
-		return
-	try:
-		gitignore = open('.gitignore', 'a')
-		for ignore in ignores:
-			gitignore.write(readfile(ignore))
-			gitignore.write("\n\n")
-	finally:
-		gitignore.close()
+	git_ignore_add(languages)
 
 # save current .gitignore
 def save(filenames):

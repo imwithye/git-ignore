@@ -11,7 +11,7 @@ all:
 
 install:
 	cp -R git-ignore $(prefix)/share/
-	ln -nsf $(prefix)/share/git-ignore/git-ignore.py $(prefix)/bin/git-ignore
+	ln -nsf $(prefix)/share/git-ignore/git_ignore.py $(prefix)/bin/git-ignore
 
 uninstall:
 	rm -rf $(prefix)/share/git-ignore
