@@ -24,17 +24,21 @@ def add(languages):
 
 # save current .gitignore
 def save(filenames):
+	try:
+		gitignorefile = open('.gitignore','r')
+		gitignore = gitignorefile.read()
+		gitignorefile.close()
+	except IOError:
+		print ".gitignore file not exist or can not open"
+		return
+
 	if len(filenames)==0:
 		name = raw_input("save as: ")
 		filenames.append(name)
 	filename = filenames[0]
 	try:
 		savedignore = open(filename + ".gitignore", "w+")
-		gitignore = open('.gitignore','r')
-		savedignore.write(gitignore.read())
-		gitignore.close()
-	except IOError:
-		print ".gitignore file not exist or can not open"
+		savedignore.write(gitignore)
 	finally:
 		savedignore.close()
 
