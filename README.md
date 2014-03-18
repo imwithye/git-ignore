@@ -30,6 +30,16 @@ curl -sSl https://raw.github.com/imwithye/git-ignore/master/installer.sh | sudo 
 
 Git-ignore will install itself to `/usr/local/share/git-ignore/` and create a symbolic link to `/usr/local/bin/git-ignore`. If the file already exists, git-ignore will override it. This can be used to upgrade git-ignore as well. This operation may require `sudo`. You can fully remove git-ignore by deleting these two files.
 
-For manually installation, you can clone this repository and use `make install`. To remove simply use `make uninstall` (may require `sudo`).
+For manually installation, you can clone this repository and use `make install`. To remove simply use `make uninstall` (may require `sudo`). Or you can recursive clone this repository and copy it to anywhere you like, then create a symbolic link of `git-ignore.py` as `git-ignore` to your system search path.
 
 **Start this repository if you like it:)**. I will publish it to `Howebrew` in the future. That will be much easier for installation.
+
+##Usage
+
+Try `git ignore usage`. It will out put some useful information. 
+
+Git-ignore is a quite simple tool.
+
+`git ignore add <ignore files>`, this command allows you add multi git gitignore files to `.gitignore`. Note that there is a search path for searching ignore files. Firstly git-ignore search `~/.git-ignores/`, then `$GIT-IGNORE/system-templates`, then `$GIT-IGNORE/github-templates`. github-templates is cloned from [GitHub gitignore template](http://github.com/github/gitignore). All git ignore templates have to be named as `name.gitignore`.
+
+To create your own template, try `git ignore save [filename]`. This command will save current `.gitignore` as `filename.gitignore` to `~/.git-ignores/`. Also you can directly create a git ignore template under `~/.git-ignores/`.
