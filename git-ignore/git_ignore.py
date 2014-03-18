@@ -31,8 +31,16 @@ def save(filenames):
 	finally:
 		savedignore.close()
 
+def list(path):
+	print "list"
+	return
+
+def delete(filenames):
+	print "delete"
+	return
+
 # cat .gitignore file
-def show():
+def show(languages):
 	try:
 		gitignore = open('.gitignore','r')
 		print gitignore.read()
@@ -45,11 +53,13 @@ def usage():
 	print "usage: git ignore <subcommand>"
 	print
 	print "Available subcommands are:"
-	print "    add         Add gitignore files. Try use 'git ignore add Python C'"
-	print "    save        Save current .gitignore file as a template"
-	print "    show        Cat .gitignore file"
-	print "    usage       Show this help message and exit"
-	print "    version     Show version and exit"
+	print "    add    <project type>    Add gitignore files. Try use 'git ignore add Python C'"
+	print "    save   [project type]    Save current .gitignore file as a template"
+	print "    list   [path]            List all saved ignore files"
+	print "    delete [ignore file]     Delete a ignore file"
+	print "    show   [ignore type]     Cat .gitignore file"
+	print "    usage                    Show this help message and exit"
+	print "    version                  Show version and exit"
 	print
 	print "http://github.com/imwithye/git-ignore"
 	print "git ignore, copyright Ciel <imwithye@gmail.com>"
@@ -62,15 +72,21 @@ def version():
 	print "git ignore, copyright Ciel <imwithye@gmail.com>"
 
 # subcommand router
-def select( argv ):
+def select(argv):
 	if argv[1] == "add":
 		add(argv[2:])
 		exit()
 	elif argv[1] == "save":
 		save(argv[2:])
 		exit()
+	elif argv[1] == "list":
+		list(argv[2:])
+		exit()
+	elif argv[1] == "delete":
+		delete(argv[2:])
+		exit()
 	elif argv[1] == "show":
-		show()
+		show(argv[2:])
 		exit()
 	elif argv[1] == "help" or argv[1] == "usage":
 		usage()
