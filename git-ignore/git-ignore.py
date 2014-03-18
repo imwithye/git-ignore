@@ -1,8 +1,8 @@
-#! /usr/bin/env python2
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # vim:fenc=utf-8
 #
-# Copyright © 2014 Ciel <imwithye@gmail.com>
+# Copyright Â© 2014 Ciel <imwithye@gmail.com>
 #
 # Distributed under terms of the MIT license.
 
