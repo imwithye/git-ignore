@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # vim:fenc=utf-8
 #
-# Copyright Â© 2014 Ciel <imwithye@gmail.com>
+# Copyright ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ© 2014 Ciel <imwithye@gmail.com>
 #
 # Distributed under terms of the MIT license.
 
@@ -28,6 +28,15 @@ def add(languages):
 def save(filename):
 	print filename
 
+# cat .gitignore file
+def show():
+	try:
+		gitignore = open('.gitignore','r')
+		print gitignore.read()
+		gitignore.close()
+	except IOError:
+		print ".gitignore file not exist or can not open"
+		
 # print usage
 def usage():
 	print "usage: git ignore <subcommand>"
@@ -35,6 +44,7 @@ def usage():
 	print "Available subcommands are:"
 	print "    add         Add gitignore files. Try use 'git ignore add Python C'"
 	print "    save        Save current .gitignore file as a template"
+	print "    show        Cat .gitignore file"
 	print "    usage       Show this help message and exit"
 	print "    version     Show version and exit"
 	print
@@ -55,6 +65,9 @@ def select( argv ):
 		exit()
 	elif argv[1] == "save":
 		save(argv[2:])
+		exit()
+	elif argv[1] == "show":
+		show()
 		exit()
 	elif argv[1] == "help" or argv[1] == "usage":
 		usage()
