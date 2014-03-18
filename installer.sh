@@ -8,6 +8,6 @@
 
 REPO=/tmp/ciel-im-git-ignore
 if [ -d "$REPO" ]; then
-	rm -rf /tmp/git-ignore
+	rm -rf $REPO
 fi
 ( git clone --recursive git://github.com/imwithye/git-ignore.git "$REPO" && cd "$REPO" && make install)
