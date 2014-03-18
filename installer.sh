@@ -1,10 +1,9 @@
 #!/bin/bash
 #
 # installer.sh
-# Copyright (C) 2014 Ciel <imwithye@gmail.com>
 #
+# Copyright © 2014 Ciel <imwithye@gmail.com>
 # Distributed under terms of the MIT license.
-#
 
 REPO=/tmp/ciel-im-git-ignore
 if [ -d "$REPO" ]; then
