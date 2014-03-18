@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 # vim:fenc=utf-8
 #
-# Copyright Â© 2014 Ciel <imwithye@gmail.com>
-#
+# Copyright © 2014 Ciel <imwithye@gmail.com>
 # Distributed under terms of the MIT license.
 
 import os, sys
