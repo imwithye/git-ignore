@@ -1,8 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-# vim:fenc=utf-8
 #
-# Copyright © 2014 Ciel <imwithye@gmail.com>
+# Copyright 2014 Ciel, http://ciel.im
 # Distributed under terms of the MIT license.
 
 import sys
@@ -24,8 +23,20 @@ def add(languages):
 		gitignore.close()
 
 # save current .gitignore
-def save(filename):
-	print filename
+def save(filenames):
+	if len(filenames)==0:
+		name = raw_input("save as: ")
+		filenames.append(name)
+	filename = filenames[0]
+	try:
+		savedignore = open(filename + ".gitignore", "w+")
+		gitignore = open('.gitignore','r')
+		savedignore.write(gitignore.read())
+		gitignore.close()
+	except IOError:
+		print ".gitignore file not exist or can not open"
+	finally:
+		savedignore.close()
 
 # cat .gitignore file
 def show():

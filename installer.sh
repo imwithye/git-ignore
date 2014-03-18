@@ -2,7 +2,7 @@
 #
 # installer.sh
 #
-# Copyright © 2014 Ciel <imwithye@gmail.com>
+# Copyright 2014 Ciel, http://ciel.im
 # Distributed under terms of the MIT license.
 
 REPO=/tmp/ciel-im-git-ignore
