@@ -1,5 +1,12 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# Copyright 2014 Ciel, http://ciel.im
+# Distributed under terms of the MIT license.
+
 import os
 
+# list all files
 def find_all_files(root, files):
 	try:
 		for lists in os.listdir(root):
@@ -20,6 +27,7 @@ def search_file(language, templates):
 			return template[1]
 	return ""
 
+# read all content form a file
 def read_all_from_file(filepath):
 	content = ""
 	try:
