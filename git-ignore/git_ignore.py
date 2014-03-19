@@ -7,6 +7,7 @@
 import sys
 from git_ignore_add import git_ignore_add
 from git_ignore_save import git_ignore_save
+from git_ignore_list import git_ignore_list
 
 # cat ignores >> .gitignore
 def add(languages):
@@ -20,18 +21,9 @@ def save(filenames):
 		filename = filenames[0]
 	git_ignore_save(filename)
 
-	#if len(filenames)==0:
-	#	name = raw_input("save as: ")
-	#	filenames.append(name)
-	#filename = filenames[0]
-	#try:
-	#	savedignore = open(filename + ".gitignore", "w+")
-	#	savedignore.write(gitignore)
-	#finally:
-	#	savedignore.close()
-
-def list(path):
-	print "list"
+# list all user ignore files
+def list():
+	git_ignore_list()
 	return
 
 def delete(filenames):
@@ -79,7 +71,7 @@ def select(argv):
 		save(argv[2:])
 		exit()
 	elif argv[1] == "list":
-		list(argv[2:])
+		list()
 		exit()
 	elif argv[1] == "delete":
 		delete(argv[2:])
