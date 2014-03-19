@@ -10,6 +10,7 @@ from config import USER_PATH
 from file_operation import test_folder
 from file_operation import find_all_files
 from file_operation import delete_file
+from file_operation import search_file
 
 def git_ignore_delete(filenames):
 	if len(filenames)==0:
@@ -20,11 +21,7 @@ def git_ignore_delete(filenames):
 	find_all_files(USER_PATH, files)
 	delete_files = []
 	for filename in filenames:
-		filename += ".gitignore"
-		for ignorefile in files:
-			if filename.lower()==ignorefile[0].lower():
-				delete_files.append(ignorefile)
-				break
+		delete_files.append(search_file(filename, files))
 
 	for delete in delete_files:
-		delete_file(delete[1])
+		delete_file(delete)
