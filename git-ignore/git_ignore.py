@@ -10,6 +10,7 @@ from git_ignore_save import git_ignore_save
 from git_ignore_list import git_ignore_list
 from git_ignore_show import git_ignore_show
 from git_ignore_which import git_ignore_which
+from git_ignore_delete import git_ignore_delete
 
 # cat ignores >> .gitignore
 def add(languages):
@@ -26,16 +27,16 @@ def save(filenames):
 # list all user ignore files
 def list():
 	git_ignore_list()
-	return
 
+# delete user ignore files
 def delete(filenames):
-	print "delete"
-	return
+	git_ignore_delete(filenames)
 
 # cat .gitignore file
 def show(languages):
 	git_ignore_show(languages)
 
+# print which ignore file will be imported
 def which(languages):
 	git_ignore_which(languages)
 		

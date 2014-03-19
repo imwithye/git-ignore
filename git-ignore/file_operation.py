@@ -39,6 +39,17 @@ def read_all_from_file(filepath):
 	finally:
 		return content
 
+# delete file
+def delete_file(path):
+	check = raw_input("remove " + path + ", yes/no? ")
+	if check.lower()!="yes":
+		print "file not removed"
+		return
+	try:
+		os.remove(path)
+	except IOError:
+		print "git ignore cannot remove " + path
+
 def test_folder(path):
 	if not os.path.exists(path):
 		os.mkdir(path)
