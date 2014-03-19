@@ -33,8 +33,8 @@ def read_all_from_file(filepath):
 	try:
 		file_to_read = open(filepath, 'r')
 		content = file_to_read.read()
+		file_to_read.close()
 	except:
 		content = ""
 	finally:
-		file_to_read.close()
 		return content
