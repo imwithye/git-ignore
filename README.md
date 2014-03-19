@@ -32,7 +32,7 @@ Git-ignore will install itself to `/usr/local/share/git-ignore/` and create a sy
 
 For manually installation, you can **recursively clone** this repository and use `make install`. To remove simply use `make uninstall` (may require `sudo`). Or you can **recursively clone** this repository and copy it to anywhere you like, then create a symbolic link of `git-ignore.py` as `git-ignore` to your system search path.
 
-**Start this repository if you like it:)**. I will publish it to `Howebrew` in the future. That will be much easier for installation.
+**Star this repository if you like it:)**. I will publish it to `Howebrew` in the future. That will be much easier for installation.
 
 ##Usage
 
