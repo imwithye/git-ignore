@@ -9,6 +9,7 @@ from git_ignore_add import git_ignore_add
 from git_ignore_save import git_ignore_save
 from git_ignore_list import git_ignore_list
 from git_ignore_show import git_ignore_show
+from git_ignore_which import git_ignore_which
 
 # cat ignores >> .gitignore
 def add(languages):
@@ -34,6 +35,9 @@ def delete(filenames):
 # cat .gitignore file
 def show(languages):
 	git_ignore_show(languages)
+
+def which(languages):
+	git_ignore_which(languages)
 		
 # print usage
 def usage():
@@ -45,6 +49,7 @@ def usage():
 	print "    list                     List all saved ignore files"
 	print "    delete [ignore file]     Delete a ignore file"
 	print "    show   [ignore type]     Cat .gitignore file or ignore file"
+	print "    which  <ignore type>     Show which ignore file will be imported"
 	print "    usage                    Show this help message and exit"
 	print "    version                  Show version and exit"
 	print
@@ -74,6 +79,9 @@ def select(argv):
 		exit()
 	elif argv[1] == "show":
 		show(argv[2:])
+		exit()
+	elif argv[1] == "which":
+		which(argv[2:])
 		exit()
 	elif argv[1] == "help" or argv[1] == "usage":
 		usage()

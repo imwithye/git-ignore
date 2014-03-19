@@ -7,15 +7,9 @@
 from file_operation import read_all_from_file
 from git_ignore_add import git_ignore_add_ignorelist
 
-# git ignore show
-def git_ignore_show(languages):
+# git ignore which
+def git_ignore_which(languages):
 	if len(languages)==0:
-		try:
-			gitignore = open('.gitignore','r')
-			print gitignore.read()
-			gitignore.close()
-		except IOError:
-			print ".gitignore file not exist or can not open"
 		return
 
 	ignores = git_ignore_add_ignorelist(languages)
@@ -24,4 +18,4 @@ def git_ignore_show(languages):
 		return
 
 	for ignore in ignores:
-		print read_all_from_file(ignore)
+		print ignore
