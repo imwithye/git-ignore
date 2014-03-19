@@ -8,6 +8,7 @@ import sys
 from git_ignore_add import git_ignore_add
 from git_ignore_save import git_ignore_save
 from git_ignore_list import git_ignore_list
+from git_ignore_show import git_ignore_show
 
 # cat ignores >> .gitignore
 def add(languages):
@@ -32,12 +33,7 @@ def delete(filenames):
 
 # cat .gitignore file
 def show(languages):
-	try:
-		gitignore = open('.gitignore','r')
-		print gitignore.read()
-		gitignore.close()
-	except IOError:
-		print ".gitignore file not exist or can not open"
+	git_ignore_show(languages)
 		
 # print usage
 def usage():

@@ -18,12 +18,12 @@ def git_ignore_add(languages):
 	try:
 		gitignore = open('.gitignore', 'a')
 		for ignore in ignores:
-			print "add gitignore file " + ignore
+			print "add gitignore file from " + ignore
 			gitignore.write(read_all_from_file(ignore))
 			gitignore.write("\n\n")
-	finally:
 		gitignore.close()
-	return
+	except IOError:
+		print "cannot wirte to .gitignore file"
 
 # get file list in three search paths
 def git_ignore_add_list_file():
