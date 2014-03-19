@@ -18,6 +18,7 @@ def git_ignore_save(filename):
 	if filename=="":
 		filename = raw_input("save as: ")
 	filename += ".gitignore"
+	filename = filename.lower()
 	test_folder(USER_PATH)
 	filepath = USER_PATH + filename
 	if test_file(filepath):
