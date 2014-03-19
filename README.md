@@ -79,5 +79,5 @@ To create your own template, try `git ignore save [filename]`. This command will
 git ignore delete my-python
 ```
 
-To delete your won template, try 'git ignore delete <ignore file>'. This command will only remove the template under '~/.git-ignores/`'.
+To delete your own template, try `git ignore delete <ignore file>`. This command will only remove the template under `~/.git-ignores/`.
 
