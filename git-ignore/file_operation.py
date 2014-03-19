@@ -42,3 +42,6 @@ def read_all_from_file(filepath):
 def test_folder(path):
 	if not os.path.exists(path):
 		os.mkdir(path)
+
+def test_file(path):
+	return os.path.isfile(path)
