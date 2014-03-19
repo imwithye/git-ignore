@@ -18,6 +18,7 @@ def git_ignore_add(languages):
 	try:
 		gitignore = open('.gitignore', 'a')
 		for ignore in ignores:
+			print "add gitignore file " + ignore
 			gitignore.write(read_all_from_file(ignore))
 			gitignore.write("\n\n")
 	finally:
