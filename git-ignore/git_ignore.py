@@ -6,6 +6,7 @@
 
 import sys
 from git_ignore_add import git_ignore_add
+from git_ignore_save import git_ignore_save
 
 # cat ignores >> .gitignore
 def add(languages):
@@ -13,23 +14,21 @@ def add(languages):
 
 # save current .gitignore
 def save(filenames):
-	try:
-		gitignorefile = open('.gitignore','r')
-		gitignore = gitignorefile.read()
-		gitignorefile.close()
-	except IOError:
-		print ".gitignore file not exist or can not open"
-		return
+	if len(filenames)<1:
+		filename = ""
+	else:
+		filename = filenames[0]
+	git_ignore_save(filename)
 
-	if len(filenames)==0:
-		name = raw_input("save as: ")
-		filenames.append(name)
-	filename = filenames[0]
-	try:
-		savedignore = open(filename + ".gitignore", "w+")
-		savedignore.write(gitignore)
-	finally:
-		savedignore.close()
+	#if len(filenames)==0:
+	#	name = raw_input("save as: ")
+	#	filenames.append(name)
+	#filename = filenames[0]
+	#try:
+	#	savedignore = open(filename + ".gitignore", "w+")
+	#	savedignore.write(gitignore)
+	#finally:
+	#	savedignore.close()
 
 def list(path):
 	print "list"
@@ -55,9 +54,9 @@ def usage():
 	print "Available subcommands are:"
 	print "    add    <project type>    Add gitignore files. Try use 'git ignore add Python C'"
 	print "    save   [project type]    Save current .gitignore file as a template"
-	print "    list   [path]            List all saved ignore files"
+	print "    list                     List all saved ignore files"
 	print "    delete [ignore file]     Delete a ignore file"
-	print "    show   [ignore type]     Cat .gitignore file"
+	print "    show   [ignore type]     Cat .gitignore file or ignore file"
 	print "    usage                    Show this help message and exit"
 	print "    version                  Show version and exit"
 	print
