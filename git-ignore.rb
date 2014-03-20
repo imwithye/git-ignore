@@ -4,7 +4,7 @@ class GitIgnore < Formula
   homepage 'https://github.com/imwithye/git-ignore'
 
   # Use the tag instead of the tarball to get submodules
-  url 'https://github.com/imwithye/git-ignore.git', :tag => 'v0.1-alpha'
+  url 'https://github.com/imwithye/git-ignore.git', :tag => 'v0.2'
 
   def install
     prefix.install "LICENSE", "README.md"
