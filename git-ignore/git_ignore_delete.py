@@ -30,7 +30,7 @@ def git_ignore_delete(filenames):
 	for filename in filenames:
 		path = search_file(filename, files)
 		if path!="":
-			delete_files.append()
+			delete_files.append(path)
 
 	for delete in delete_files:
 		delete_file(delete)
