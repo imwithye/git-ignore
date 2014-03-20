@@ -19,8 +19,9 @@ def git_ignore_add(languages):
 		gitignore = open('.gitignore', 'a')
 		for ignore in ignores:
 			print "add gitignore file from " + ignore
+			gitignore.write("\n# created by git-ignore\n")
 			gitignore.write(read_all_from_file(ignore))
-			gitignore.write("\n\n")
+			gitignore.write("\n")
 		gitignore.close()
 	except IOError:
 		print "cannot wirte to .gitignore file"
