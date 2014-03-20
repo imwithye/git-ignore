@@ -20,8 +20,6 @@ def git_ignore_delete(filenames):
 		path = os.getcwd()+"/.gitignore"
 		if test_file(path):
 			delete_file(path)
-		else:
-			print "no .gitignore found in current directory"
 		return
 
 	test_folder(USER_PATH)

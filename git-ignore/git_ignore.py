@@ -48,8 +48,8 @@ def usage():
 	print "    add    <project type>    Add gitignore files. Try use 'git ignore add Python C'"
 	print "    save   [project type]    Save current .gitignore file as a template"
 	print "    list                     List all saved ignore files"
-	print "    delete [ignore file]     Delete a ignore file"
-	print "    show   [ignore type]     Cat .gitignore file or ignore file"
+	print "    delete [ignore file]     Delete .gitignore or a ignore file"
+	print "    show   [ignore type]     Cat .gitignore or ignore file"
 	print "    which  <ignore type>     Show which ignore file will be imported"
 	print "    usage                    Show this help message and exit"
 	print "    version                  Show version and exit"
@@ -59,7 +59,7 @@ def usage():
 
 # print version
 def version():
-	print "git ignore, version 0.1."
+	print "git ignore, version 0.2"
 	print
 	print "http://github.com/imwithye/git-ignore"
 	print "git ignore, copyright Ciel <imwithye@gmail.com>"
@@ -75,7 +75,7 @@ def select(argv):
 	elif argv[1] == "list":
 		list()
 		exit()
-	elif argv[1] == "delete":
+	elif argv[1] == "delete" or argv[1] == "remove":
 		delete(argv[2:])
 		exit()
 	elif argv[1] == "show":
