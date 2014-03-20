@@ -13,7 +13,7 @@ from file_operation import test_file
 def git_ignore_save(filename):
 	gitignore = read_all_from_file('.gitignore')
 	if gitignore=="":
-		print "no .gitignore file found."
+		print "no .gitignore file found"
 		return
 	if filename=="":
 		filename = raw_input("save as: ")
