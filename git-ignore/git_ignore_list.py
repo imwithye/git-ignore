@@ -23,10 +23,10 @@ def git_ignore_list():
 		if name_lower[-10:]==".gitignore":
 			if name_lower in lists:
 				duplicate = True
-				print name_lower[:-10] + "(duplicate)\t",
+				print name[:-10] + "(duplicate)\t",
 			else:
 				lists.append(name_lower)
-				print name_lower[:-10] + "\t",
+				print name[:-10] + "\t",
 
 	print
 	if duplicate:
