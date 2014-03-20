@@ -3,4 +3,4 @@
 # nothing will be ignored here
 # if you have some gitignore templates sharing between users,
 #    put them here and name it as filename.gitignore
-# filename will be used in `git ignore language filename`
+# filename will be used in `git ignore add filename`

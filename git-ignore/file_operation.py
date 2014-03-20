@@ -7,6 +7,7 @@
 import os
 
 # list all files
+# file path will be stored in files, files = [(filename, path)]
 def find_all_files(root, files):
 	try:
 		for lists in os.listdir(root):
@@ -20,6 +21,7 @@ def find_all_files(root, files):
 		files = []
 
 # search file
+# return "" if file cannot find.
 def search_file(language, templates):
 	language = language.lower() + ".gitignore"
 	for template in templates:
@@ -28,6 +30,7 @@ def search_file(language, templates):
 	return ""
 
 # read all content form a file
+# return "" if any exception caught
 def read_all_from_file(filepath):
 	content = ""
 	try:
@@ -41,6 +44,8 @@ def read_all_from_file(filepath):
 
 # delete file
 def delete_file(path):
+	if not test_file(path):
+		return
 	check = raw_input("remove " + path + ", yes/no? ")
 	if check.lower()!="yes":
 		print "file not removed"

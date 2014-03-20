@@ -15,7 +15,7 @@ def git_ignore_show(languages):
 			print gitignore.read()
 			gitignore.close()
 		except IOError:
-			print ".gitignore file not exist or can not open"
+			return
 		return
 
 	ignores = git_ignore_add_ignorelist(languages)
