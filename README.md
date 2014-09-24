@@ -31,7 +31,7 @@ Git-ignore is fully wirtten in python 2. Make sure you have python 2 installed. 
 Git-ignore can be installed via Homebrew. Try
 
 ```Bash
-brew tap imwithye/formulae
+brew tap imwithye/formula
 brew install git-ignore
 ```
 
