@@ -1,5 +1,7 @@
 Git-ignore
 ===
+**This repository has been deprecated. Use [imwithye/gitignore](https://github.com/imwithye/gitignore)** instead.
+
 Are you tired of managing your git ignore files? You probably work in this way
 
 ```Bash
